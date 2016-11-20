@@ -7,8 +7,8 @@
 class search: public algorithm
 {
 public:
-        virtual void execute(vertex* source_vertex);
-        virtual void execute(vertex* source_vertex, vertex* destination_vertex);
+//      virtual void execute(vertex* source_vertex);
+//      virtual void execute(vertex* source_vertex, vertex* destination_vertex);
 public:
         void BFS(vertex* ver);
 	void DFS(vertex* ver);
