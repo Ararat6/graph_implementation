@@ -39,11 +39,11 @@ int main()
 
 	/*algorithm* alg = new search(test_graph);
 	alg -> DFS("v7");
-	alg -> BFS("v7");
-	algorithm* alg = new shortest_path(test_graph);
-	alg -> dijkstra("v1", "v5");
+	alg -> BFS("v7");*/
+	shortest_path* alg = new shortest_path(test_graph);
+	alg -> dijkstra("v8", "v6");
 	int dist = alg -> get_distance();
-	std::cout << dist << std::endl;*/
+	std::cout << "distance = " << dist << std::endl;
 		
 
     return 0;

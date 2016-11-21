@@ -9,7 +9,7 @@
 #include <map>
 
 
-class shortest_path: public algorithm 
+class shortest_path//: public algorithm 
 {
 
 private:
@@ -26,8 +26,8 @@ public:
 	int get_distance() const;
 
 public:
-	virtual void execute(vertex* source_vertex);
-	virtual void execute(vertex* source_vertex, vertex* destination_vertex);
+//	virtual void execute(vertex* source_vertex);
+//	virtual void execute(vertex* source_vertex, vertex* destination_vertex);
 
 public:
 	void dijkstra(const std::string & source, const std::string & destination);

@@ -26,6 +26,9 @@ private:
     /** Member for fix graph direction type */
     direction m_direction;
 public:
+    vertex* get_vertex_by_id(const std::string& name);
+	std::vector<vertex*>* get_vertices() const;
+	void set(vertex* _vertex);
     /** Function for get graph direction type */
     direction get_direction() const;
 public:
