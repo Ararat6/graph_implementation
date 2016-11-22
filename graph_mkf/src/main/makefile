@@ -21,8 +21,10 @@ cpp_files := main.cpp \
 			 vertex.cpp \
 			 edge.cpp \
 			 graph.cpp \
-			 vertex_parser.cpp \
-			 flyweight.cpp \
+			 input_parser.cpp \
+			 base_edge.cpp \
+			 weighted_edge.cpp \
+			 param_edge.cpp \
 
 # The header files under the project, which are supposed to be used by other
 # projects.

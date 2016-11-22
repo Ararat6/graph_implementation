@@ -1,13 +1,13 @@
 #ifndef _WEIGHTED_EDGE_HPP_
 #define _WEIGHTED_EDGE_HPP_
 
-#include "edge_decorator.hpp"
+#include "param_edge.hpp"
 
 /**
   * @brief
-  * edge_decorator abstract class for weighted edges of graph  
+  * param_egde abstract class for weighted edges of graph  
   */
-class weighted_edge: public edge_decorator 
+class weighted_edge: public param_edge 
 {
 private:
     /** Edge weight */

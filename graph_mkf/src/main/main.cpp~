@@ -11,11 +11,7 @@
 
 
 int main()
-{	
-	
-	std::string file_path = "./graph.txt";
-	input_parser pars;
-        pars.create_graph(file_path);	
+{
     /*std::string file_path = "./graph.txt";
     vertex_parser parser;
     parser.create_graph(file_path);
@@ -39,11 +35,11 @@ int main()
 		std::cout << "\n\n";
 	}
 */
-	//base_edge* ed = new edge();
-	//std::cout << ed->get_weight() << std::endl;
+	base_edge* ed = new edge();
+	std::cout << ed->get_weight() << std::endl;
 	
-	//base_edge* weighted = new weighted_edge(ed, 10);
-	//std::cout << weighted->get_weight() << std::endl;
+	base_edge* weighted = new weighted_edge(ed, 10);
+	std::cout << weighted->get_weight() << std::endl;
 
 	/*algorithm* alg = new search(test_graph);
 	alg -> DFS("v7");

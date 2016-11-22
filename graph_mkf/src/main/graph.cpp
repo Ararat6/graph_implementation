@@ -1,7 +1,7 @@
 #include "graph.hpp"
 #include <iostream>
 
-vertex* graph::add_vertex(const string& name)
+vertex* graph::add_vertex(const std::string& name)
 {
 	vertex* _vertex = get_vertex_by_name(name);
 	if(NULL == _vertex) {
@@ -67,7 +67,10 @@ void graph::set_edge_weight(edge_weight weight)
 {
 	m_edge_weight = weight;
 }
-
+int graph::get_vertices_count() const
+{
+	return m_vertices->size();
+}
 graph::graph() 
 {}
 

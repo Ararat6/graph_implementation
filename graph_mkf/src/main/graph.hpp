@@ -4,7 +4,7 @@
 #include "vertex.hpp"
 #include "weighted_edge.hpp"
 #include "edge.hpp"
-#include "base_edge"
+#include "base_edge.hpp"
 #include <string>
 #include <vector>
 
@@ -28,7 +28,7 @@ private:
 	edge_weight m_edge_weight;
 public:
 	/** Function for add vertex to graph  */
-	vertex* add_vertex(const string& name);
+	vertex* add_vertex(const std::string& name);
 	/** Function for get vertex from graph by name */
     vertex* get_vertex_by_name(const std::string& name);
 	
@@ -39,6 +39,7 @@ public:
 	void set_direction(direction dir);
 	edge_weight get_edge_weight() const;
 	void set_edge_weight(edge_weight weight);
+	int get_vertices_count() const;
 public:
     /** Constructor */
     graph();
