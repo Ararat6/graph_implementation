@@ -1,6 +1,8 @@
 #include "graph.hpp"
+#include "weighted_edge.hpp"
+#include "base_edge.hpp"
 #include "edge.hpp"
-#include "vertex_parser.hpp"
+//#include "vertex_parser.hpp"
 #include "algorithm.hpp"
 #include "search.hpp"
 #include "shortest_path.hpp"
@@ -13,7 +15,7 @@
 
 int main()
 {
-    std::string file_path = "./graph.txt";
+    /*std::string file_path = "./graph.txt";
     vertex_parser parser;
     parser.create_graph(file_path);
     std::vector<vertex*>* vertices = parser.get_vertices();
@@ -35,17 +37,22 @@ int main()
 		}
 		std::cout << "\n\n";
 	}
-
+*/
 
 	/*algorithm* alg = new search(test_graph);
 	alg -> DFS("v7");
 	alg -> BFS("v7");*/
-	shortest_path* alg = new shortest_path(test_graph);
+	/*shortest_path* alg = new shortest_path(test_graph);
 	alg -> dijkstra("v8", "v6");
 	int dist = alg -> get_distance();
-	std::cout << "distance = " << dist << std::endl;
-		
+	std::cout << "distance = " << dist << std::endl;*/
+	base_edge* ed = new edge();
+	std::cout << ed->get_weight() << std::endl;
+	
+	base_edge* weighted = new weighted_edge(ed, 10);
+	std::cout << weighted->get_weight() << std::endl;
 
+	
     return 0;
 }
 

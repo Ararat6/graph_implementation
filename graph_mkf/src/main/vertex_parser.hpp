@@ -7,6 +7,7 @@
 #include <fstream>
 #include <iostream>
 
+
 class vertex_parser
 {
 private:

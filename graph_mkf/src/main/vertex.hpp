@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 
-class edge;
+class base_edge;
 
 /** 
   * @brief
@@ -15,16 +15,18 @@ private:
     /** Vector of neighbour vertices edges, 
       * which shows destination for this vertex
       */
-    std::vector<edge*> m_edges;
+    std::vector<base_edge*> m_edges;
     std::string m_name;
+	int m_degree;
 	bool m_is_visited;
 public:
     /** For adding edge in vertex */
-    void add_edge(edge* vertex_edge);
+    void add_edge(base_edge* node_edge);
     /** For getting edges of vertex */
-	std::vector<edge*>* get_edges();
+	std::vector<base_edge*>* get_edges();
     /** For getting vertex degree */
     int get_degree() const;
+	void add_degree();
     /** For getting vertex name */
     std::string get_name() const;
 	void set_visited(const bool is_visited);

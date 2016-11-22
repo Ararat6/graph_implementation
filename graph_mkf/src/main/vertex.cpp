@@ -1,15 +1,20 @@
 #include "vertex.hpp"
-std::vector<edge*>* vertex::get_edges()
+
+std::vector<base_edge*>* vertex::get_edges()
 {
 	return &m_edges;
 }
-void vertex::add_edge(edge* vertex_edge)
+void vertex::add_edge(base_edge* node_edge)
 {
-    m_edges.push_back(vertex_edge);
+    m_edges.push_back(node_edge);
 }
 int vertex::get_degree() const
 {
-    return 0;
+    return m_degree;
+}
+void vertex::add_degree()
+{
+	m_degree++;
 }
 std::string vertex::get_name() const
 {

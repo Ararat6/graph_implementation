@@ -1,14 +1,22 @@
 #include "graph.hpp"
 #include <iostream>
-#include <cassert>
 
-// DEL ME graph* graph::instance = NULL;
-direction graph::get_direction() const
+vertex* graph::add_vertex(const string& name)
 {
-    return m_direction;
+	vertex* _vertex = get_vertex_by_name(name);
+	if(NULL == _vertex) {
+		_vertex = new vertex(name);
+		if(NULL != _vertex) {
+			m_vertices->push_back(_vertex);
+			return _vertex;
+		} else {
+			//TODO exception CANNOT create vertex
+		}
+	} else {
+		return _vertex;
+	}
 }
-
-vertex* graph::get_vertex_by_id(const std::string& name) 
+vertex* graph::get_vertex_by_name(const std::string& name) 
 {
     //size_t size = m_vertices->size(); 
     //std::cout << "graph size " <<size<<std::endl;
@@ -21,40 +29,47 @@ vertex* graph::get_vertex_by_id(const std::string& name)
     }
     return NULL;
 }
+void graph::add_edge_for_vertices(vertex* source, vertex* destination)
+{
+	base_edge* b_edge = new edge();
+	b_edge->set_source_vertex(source);
+	b_edge->set_destination_vertex(destination);
+	source->add_edge(b_edge);
+	if(get_direction() == undirected) {
+		destination->add_edge(b_edge);
+	}
 
-std::vector<vertex*>* graph::get_vertices() const
-{
-	return m_vertices;
 }
-void graph::set(vertex* _vertex)
+void graph::add_edge_for_vertices(vertex* source, vertex* destination, int weight)
 {
-	m_vertices->push_back(_vertex);
+	base_edge* b_edge = new weighted_edge(new edge, weight);
+	b_edge->set_source_vertex(source);
+	b_edge->set_destination_vertex(destination);
+	source->add_edge(b_edge);
+	if(get_direction() == undirected) {
+		destination->add_edge(b_edge);
+	}
+
+}
+direction graph::get_direction() const
+{
+    return m_direction;
+}
+void graph::set_direction(direction dir)
+{
+	m_direction = dir;
+}
+edge_weight graph::get_edge_weight() const
+{
+	return m_edge_weight;
+}
+void graph::set_edge_weight(edge_weight weight)
+{
+	m_edge_weight = weight;
 }
 
-/* DEL ME
-void graph::set_direction(const direction& dir)
-{
-    
-}
+graph::graph() 
+{}
 
-graph* graph::get_instance()
-{
-         
-    if(NULL == instance) {
-       instance = new graph();
-    }
-    assert(NULL != instance); 
-    return instance;
-}
-void init_graph(const std::vector<vertex*>& vertices)
-{
-}*/
-
-graph::graph(std::vector<vertex*>* vertices, direction graph_dir)
-            :m_vertices(vertices)
-            ,m_direction(graph_dir)
-{
-}
 graph::~graph()
-{
-}
+{}
